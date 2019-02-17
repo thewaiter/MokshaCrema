@@ -315,7 +315,7 @@ part {                                          \
       text {                                    \
          text: "";                              \
          font: "Edje-Vera";                     \
-         size: 10;                              \
+         size: 12;                              \
          min: 0 1;                              \
          align: 0.0 0.5;                        \
          text_class: "title_bar";               \
