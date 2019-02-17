@@ -1,0 +1,73 @@
+/*
+ * Crema theme for e17
+ * Glen 'g60' Larsen, March 2007
+ * Updated by Agustin Verdegal March 2012
+ *
+ * Fairly basic theme with color inspiration from the chocolate colors
+ * in the tango palette.
+ */
+
+#define CREMA_VERSION "2.0"
+
+data {
+  item: "theme/name"	"Crema";
+  item: "theme/version"	CREMA_VERSION;
+  item: "theme/license"	"Gpl 3";
+  item: "theme/updated"	"Agust";
+}
+
+fonts {
+   font: "Vera.ttf"   "Edje-Vera";
+   font: "VeraBd.ttf" "Edje-Vera-Bold";
+}
+
+// border & dialog meat
+#define BORDER_TRIM  46  52  54
+#define BORDER_BASE 233 185 110
+#define BORDER_GRAD 143  89   2
+#define DIALOG_LIGHT 233 213 182
+#define DIALOG_LIGHTER 233 226 216
+#define DIALOG_LOCI 233 233 233
+#define DIALOG_BASE 233 204 158
+
+collections {
+#include "focus_macros.edc"
+#include "button_macros.edc"
+#include "dialog_macros.edc"
+#include "background.edc"
+#include "about.edc"
+#include "theme_about.edc"
+#include "border.edc"
+#include "button.edc"
+#include "configure.edc"
+#include "dialog.edc"
+#include "menu.edc"
+#include "move_resize.edc"
+#include "radio.edc"
+#include "check.edc"
+#include "pointer.edc"
+#include "frame.edc"
+#include "entry.edc"
+#include "scroll_macros.edc"
+#include "scrollframe.edc"
+#include "winlist.edc"
+#include "ilist.edc"
+#include "tlist.edc"
+#include "fileman.edc"
+#include "pager.edc"
+#include "error.edc"
+#include "slider.edc"
+#include "shelf.edc"
+#include "clock.edc"
+#include "milky_cpu.edc"
+#include "milky_cpufreq.edc"
+#include "milky_mem.edc"
+#include "milky_mixer.edc"
+#include "milky_net.edc"
+#include "milky_init.edc"
+#include "forecasts_module.edc"
+#include "net_module.edc"
+#include "start.edc"
+#include "toolbar.edc"
+#include "sys.edc"
+}

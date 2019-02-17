@@ -1,0 +1,170 @@
+// requires button_macros.edc
+
+
+#define BUTTON_CHECK_PROGRAMS()                 \
+program {                                       \
+   name: "turn_on1";                            \
+   signal: "e,state,checked";                   \
+   source: "e";                                 \
+   action: STATE_SET "active" 0.0;              \
+   target: "chosen";                            \
+}                                               \
+program {                                       \
+   name: "turn_off1";                           \
+   signal: "e,state,unchecked";                 \
+   source: "e";                                 \
+   action: STATE_SET "default" 0.0;             \
+   target: "chosen";                            \
+}                                               \
+program {                                       \
+   name: "click";                               \
+   signal: "mouse,down,1";                      \
+   source: "event";                             \
+   action: SIGNAL_EMIT "e,action,toggle" "";    \
+}
+
+group { name: "e/widgets/check";
+   images {
+      image: "c_images/check_border.png" COMP;
+      image: "c_images/check_chosen.png" COMP;
+   }
+   parts {
+      BUTTON_OUTLINE_PT("check_border.png")
+      BUTTON_CHOSEN_PT("check_chosen.png")
+      BUTTON_TEXT_PT("check")
+      BUTTON_EVENT_PT()
+      COMMON_FOCUS_PART()
+   }
+   programs {
+      BUTTON_CHECK_PROGRAMS()
+      COMMON_FOCUS_PROGRAMS()
+      program {
+         name: "disable";
+         signal: "e,state,disabled";
+         source: "e";
+         action: STATE_SET "disabled" 0.0;
+         target: "outline";
+         target: "event";
+         target: "e.text.label";
+      }
+      program {
+         name: "enable";
+         signal: "e,state,enabled";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "outline";
+         target: "event";
+         target: "e.text.label";
+      }
+   }
+}
+
+
+group { name: "e/widgets/check_icon";
+   parts {
+      BUTTON_OUTLINE_PT("check_border.png")
+      BUTTON_CHOSEN_PT("check_chosen.png")
+      part {
+         name: "e.swallow.icon";
+         type: SWALLOW;
+         mouse_events: 0;
+         clip_to: "icon_clip";
+         description {
+            state: "default" 0.0;
+            min: 16 16;
+            rel1 {
+               to_x: "outline";
+               relative: 1.0 0.0;
+               offset: 2 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -2 -2;
+            }
+         }
+         description {
+            state: "label_visible" 0.0;
+            min: 16 16;
+            rel1 {
+               to_x: "outline";
+               relative: 1.0 0.0;
+               offset: 2 2;
+            }
+            rel2 {
+               to_y: "e.text.label";
+               relative: 1.0 0.0;
+               offset: -2 -2;
+            }
+         }
+      }
+      part {
+         name: "icon_clip";
+         type: RECT;
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            min: 16 16;
+            rel1 {
+               to: "e.swallow.icon";
+            }
+            rel2 {
+               to: "e.swallow.icon";
+            }
+            color: 255 255 255 255;
+         }
+         description {
+            state: "disabled" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 128;
+         }
+      }
+      part {
+         name: "label_clip";
+         type: RECT;
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            visible: 0;
+         }
+         description {
+            state: "label_visible" 0.0;
+            visible: 1;
+         }
+      }
+      BUTTON_TEXT_PT("check")
+      BUTTON_EVENT_PT()
+      COMMON_FOCUS_PART()
+   }
+   programs {
+      program {
+         name: "label_on";
+         signal: "e,state,labeled";
+         source: "e";
+         action: STATE_SET "label_visible" 0.0;
+         target: "e.swallow.icon";
+         target: "label_clip";
+      }
+      BUTTON_CHECK_PROGRAMS()
+      COMMON_FOCUS_PROGRAMS()
+      program {
+         name: "disable";
+         signal: "e,state,disabled";
+         source: "e";
+         action: STATE_SET "disabled" 0.0;
+         target: "outline";
+         target: "event";
+         target: "e.text.label";
+         target: "icon_clip";
+      }
+      program {
+         name: "enable";
+         signal: "e,state,enabled";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "outline";
+         target: "event";
+         target: "e.text.label";
+         target: "icon_clip";
+      }
+   }
+}

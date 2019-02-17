@@ -1,0 +1,18 @@
+
+group { name: "e/theme/about";
+   images {
+      image: "c_images/theme_image.png" COMP;
+   }
+   min: 512 300;
+   max: 512 300;
+   parts {
+      part {
+         name: "crema";
+         type: IMAGE;
+         mouse_events: 0;
+         description { state: "default" 0.0;
+            image.normal: "c_images/theme_image.png";
+         }
+      }
+   }
+}

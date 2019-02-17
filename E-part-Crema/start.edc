@@ -1,0 +1,91 @@
+images {
+   image: "images/start_glow.png" COMP;
+   image: "images/start_0001.png" COMP;
+   image: "images/start_0006.png" COMP;
+}
+
+group { name: "e/modules/start/main";
+   max:  128 128;
+   parts {
+      part {
+         name: "glow";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            image {
+               normal: "images/start_glow.png";
+            }
+            color: 255 255 255 50;
+         }
+         description {
+            state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 100;
+         }
+      }
+      part {
+         name: "logo";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            aspect: 1.0 1.0;
+            aspect_preference: BOTH;
+            image {
+               normal: "images/start_0001.png";
+            }
+         }
+      }
+      part {
+         name: "logo_focus";
+         description {
+            state: "default" 0.0;
+            aspect: 1.0 1.0;
+            aspect_preference: BOTH;
+            image {
+               normal: "images/start_0006.png";
+            }
+            color: 255 255 255 0;
+         }
+         description {
+            state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
+      }
+      part {
+         name: "start_events";
+         type: RECT;
+         mouse_events: 1;
+	 description {
+	    state: "default" 0.0;
+	    color: 255 255 255 0;
+	 }
+      }
+   }
+   programs {
+      program {      
+	 name: "focus_in";
+	 signal:  "mouse,in";
+	 source:  "start_events";
+         action: STATE_SET "focused" 0.0;
+         transition: LINEAR 1.0;
+         target: "logo_focus";
+         target: "glow";
+      }
+      program {      
+	 name: "focus_out_pre";
+	 signal:  "mouse,out";
+	 source:  "start_events";
+	 action:  ACTION_STOP;
+         target: "focus_in";
+         after: "focus_out";
+      }
+      program {
+         name: "focus_out";
+         action: STATE_SET "default" 0.0;
+         transition: LINEAR 1.0;
+         target: "logo_focus";
+         target: "glow";
+      }
+   }
+}

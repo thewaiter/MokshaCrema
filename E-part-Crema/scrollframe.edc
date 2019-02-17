@@ -1,0 +1,9 @@
+
+group { name: "e/widgets/scrollframe";
+   parts {
+      #include "scroll_parts.edc"
+   }
+   programs {
+      #include "scroll_programs.edc"
+   }
+}

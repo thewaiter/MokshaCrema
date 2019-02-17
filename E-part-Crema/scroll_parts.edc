@@ -1,0 +1,522 @@
+images {
+   image: "c_images/ibar_bg_v.png" COMP;
+   image: "c_images/ibar_bg_h.png" COMP;
+   image: "c_images/sb_barv.png" COMP;
+   image: "c_images/sb_barh.png" COMP;
+   image: "c_images/sb_runnerv.png" COMP;
+   image: "c_images/sb_bt_all.png" COMP;
+   image: "c_images/sb_runnerh.png" COMP;
+   image: "images/e17_ibar_over_v.png" COMP;
+   image: "images/e17_scrollbar_hdrag_thumb.png" COMP;
+   image: "images/e17_scrollbar_vdrag_thumb.png" COMP;
+}
+
+part {
+   name: "bg";
+   mouse_events: 0;
+   description {
+      state: "default" 0.0;
+      image {
+         normal: "c_images/ibar_bg_h.png";
+         border: 7 7 7 7;
+      }
+      fill {
+         smooth : 0;
+      }
+   }
+}
+part {
+   name: "clipper";
+   type: RECT;
+   mouse_events: 0;
+   description {
+      state: "default" 0.0;
+      rel1 {
+         to: "bg";
+         offset: 4 4;
+      }
+      rel2 {
+         to: "bg";
+         offset: -5 -5;
+      }
+   }
+}
+part {
+   name: "e.swallow.content";
+   clip_to: "clipper";
+   type: SWALLOW;
+   description {
+      state: "default" 0.0;
+      rel1 {
+         offset: 4 4;
+      }
+      rel2 {
+         relative: 0.0 0.0;
+         offset: -1 -1;
+         to_x: "sb_vbar";
+         to_y: "sb_hbar";
+      }
+   }
+}
+part {
+   name: "conf_over";
+   mouse_events: 0;
+   description {
+      state: "default" 0.0;
+      rel1.to: "bg";
+      rel2.to: "bg";
+      image {
+         normal: "images/e17_ibar_over_v.png";
+         border: 13 13 13 13;
+         middle: 0;
+      }
+      fill.smooth : 0;
+   }
+}
+part {
+   name: "sb_vbar";
+   type: RECT;
+   mouse_events: 0;
+   description {
+      state: "default" 0.0;
+//      min: 16 16;
+      min: 16 32;
+      align: 1.0 0.0;
+      rel1 {
+         to: "bg";
+         relative: 1.0 0.0;
+         offset: -5 4;
+      }
+      rel2 {
+         to: "bg";
+         relative: 1.0 0.0;
+         offset: -5 -1;
+         to_y: "sb_hbar";
+      }
+   }
+   description {
+      state: "hidden" 0.0;
+      visible: 0;
+      max: 0 99999;
+      rel1 {
+         to: "bg";
+         relative: 1.0 0.0;
+         offset: -4 4;
+      }
+      rel2 {
+         to: "bg";
+         relative: 1.0 0.0;
+         offset: -4 -1;
+         to_y: "sb_hbar";
+      }
+   }
+}
+part {
+   name: "sb_vbar_base";
+   type: RECT;
+   clip_to: "sb_vbar";
+   mouse_events: 1;
+   description {
+      state: "default" 0.0;
+      color: 0 0 0 0;
+      rel1 {
+         relative: 0.0 1.0;
+         offset: 0 0;
+         to: "sb_vbar_a1";
+      }
+      rel2 {
+         relative: 1.0 0.0;
+         offset: -1 -1;
+         to: "sb_vbar_a2";
+      }
+   }
+}
+part {
+   name: "sb_vbar_runner";
+   clip_to: "sb_vbar";
+   mouse_events: 0;
+   description {
+      state: "default" 0.0;
+      max: 2 99999;
+      rel1 {
+         to: "sb_vbar_base";
+      }
+      rel2 {
+         to: "sb_vbar_base";
+      }
+      image {
+         normal: "c_images/sb_runnerv.png";
+         border: 0 0 2 2;
+      }
+      fill {
+         smooth: 0;
+      }
+   }
+}
+// Event region above the vertical scroller
+part {
+   name: "sb_vbar_p1";
+   type: RECT;
+   clip_to: "sb_vbar";
+   mouse_events: 1;
+   description {
+      state: "default" 0.0;
+      color: 0 0 0 0;
+      rel1 {
+         relative: 0.0 1.0;
+         offset: 0 0;
+         to: "sb_vbar_a1";
+      }
+      rel2 {
+         relative: 1.0 0.0;
+         offset: -1 -1;
+         to: "e.dragable.vbar";
+      }
+   }
+}
+// Event region below the vertical scroller
+part {
+   name: "sb_vbar_p2";
+   type: RECT;
+   clip_to: "sb_vbar";
+   mouse_events: 1;
+   description {
+      state: "default" 0.0;
+      color: 0 0 0 0;
+      rel1 {
+         relative: 0.0 1.0;
+         offset: 0 0;
+         to: "e.dragable.vbar";
+      }
+      rel2 {
+         relative: 1.0 0.0;
+         offset: -1 -1;
+         to: "sb_vbar_a2";
+      }
+   }
+}
+part {
+   name: "e.dragable.vbar";
+   clip_to: "sb_vbar";
+   mouse_events: 1;
+   dragable {
+      x: 0 0 0;
+      y: 1 1 0;
+      confine: "sb_vbar_base";
+   }
+   description {
+      state: "default" 0.0;
+      min: 16 28;
+      rel1 {
+         relative: 0.5 0.5;
+         offset: 0 0;
+         to: "sb_vbar_base";
+      }
+      rel2 {
+         relative: 0.5 0.5;
+         offset: 0 0;
+         to: "sb_vbar_base";
+      }
+      image {
+         normal: "c_images/sb_barv.png";
+         border: 3 3 10 10;
+      }
+   }
+   description {
+      state: "clicked" 0.0;
+      inherit: "default" 0.0;
+   }
+}
+part {
+   name: "vbar_bar_thumb";
+   clip_to: "sb_vbar";
+   mouse_events: 0;
+   description {
+      state: "default" 0.0;
+      max: 8 8;
+      min: 8 8;
+      rel1 {
+         to: "e.dragable.vbar";
+      }
+      rel2 {
+         to: "e.dragable.vbar";
+      }
+      image {
+         normal: "images/e17_scrollbar_vdrag_thumb.png";
+      }
+   }
+}
+part {
+   name: "sb_vbar_a1";
+   type: IMAGE;
+   mouse_events: 1;
+   clip_to: "sb_vbar";
+   description {
+      state: "default" 0.0;
+      align: 0.5 0.0;
+      aspect: 1.0 1.0;
+      aspect_preference: HORIZONTAL;
+      rel1 {
+         to: "sb_vbar";
+         relative: 0.0 0.0;
+         offset: 0 0;
+      }
+      rel2 {
+         to: "sb_vbar";
+         relative: 1.0 0.0;
+         offset: -1 0;
+      }
+      image.normal: "c_images/sb_bt_all.png";
+   }
+   description {
+      state: "clicked" 0.0;
+      inherit: "default" 0.0; // for now
+   }
+}
+part {
+   name: "sb_vbar_a2";
+   type: IMAGE;
+   mouse_events: 1;
+   clip_to: "sb_vbar";
+   description {
+      state: "default" 0.0;
+      align: 0.5 1.0;
+      aspect: 1.0 1.0;
+      aspect_preference: HORIZONTAL;
+      rel1 {
+         to: "sb_vbar";
+         relative: 0.0 1.0;
+         offset: 0 -1;
+      }
+      rel2 {
+         to: "sb_vbar";
+         relative: 1.0 1.0;
+         offset: -1 -1;
+      }
+      image.normal: "c_images/sb_bt_all.png";
+   }
+   description {
+      state: "clicked" 0.0;
+      inherit: "default" 0.0; // for now
+   }
+}
+part {
+   name: "sb_hbar";
+   type: RECT;
+   mouse_events: 0;
+   description {
+      state: "default" 0.0;
+      min: 16 16;
+      align: 0.0 1.0;
+      rel1 {
+         to: "bg";
+         relative: 0.0 1.0;
+         offset: 4 -5;
+      }
+      rel2 {
+         to: "bg";
+         relative: 0.0 1.0;
+         offset: -1 -5;
+         to_x: "sb_vbar";
+      }
+   }
+   description {
+      state: "hidden" 0.0;
+      visible: 0;
+      rel1 {
+         to: "bg";
+         relative: 0.0 1.0;
+         offset: 0 -4;
+      }
+      rel2 {
+         to: "bg";
+         relative: 0.0 1.0;
+         offset: -1 -4;
+         to_x: "sb_vbar";
+      }
+   }
+}
+part {
+   name: "sb_hbar_base";
+   type: RECT;
+   clip_to: "sb_hbar";
+   mouse_events: 1;
+   description {
+      state: "default" 0.0;
+      color: 0 0 0 0;
+      rel1 {
+         relative: 1.0 0.0;
+         offset: 0 0;
+         to: "sb_hbar_a1";
+      }
+      rel2 {
+         relative: 0.0 1.0;
+         offset: -1 -1;
+         to: "sb_hbar_a2";
+      }
+   }
+}
+part {
+   name: "sb_hbar_runner";
+   clip_to: "sb_hbar";
+   mouse_events: 0;
+   description {
+      state: "default" 0.0;
+      max: 99999 2;
+      rel1 {
+         to: "sb_hbar_base";
+      }
+      rel2 {
+         to: "sb_hbar_base";
+      }
+      image {
+         normal: "c_images/sb_runnerh.png";
+         border: 4 4 0 0;
+      }
+      fill {
+         smooth: 0;
+      }
+   }
+}
+part {
+   name: "sb_hbar_p1";
+   type: RECT;
+   clip_to: "sb_hbar";
+   mouse_events: 1;
+   description {
+      state: "default" 0.0;
+      color: 0 0 0 0;
+      rel1 {
+         relative: 1.0 0.0;
+         offset: 0 0;
+         to: "sb_hbar_a1";
+      }
+      rel2 {
+         relative: 0.0 1.0;
+         offset: -1 -1;
+         to: "e.dragable.hbar";
+      }
+   }
+}
+part {
+   name: "sb_hbar_p2";
+   type: RECT;
+   clip_to: "sb_hbar";
+   mouse_events: 1;
+   description {
+      state: "default" 0.0;
+      color: 0 0 0 0;
+      rel1 {
+         relative: 1.0 0.0;
+         offset: 0 0;
+         to: "e.dragable.hbar";
+      }
+      rel2 {
+         relative: 0.0 1.0;
+         offset: -1 -1;
+         to: "sb_hbar_a2";
+      }
+   }
+}
+part {
+   name: "e.dragable.hbar";
+   clip_to: "sb_hbar";
+   mouse_events: 1;
+   dragable {
+      x: 1 1 0;
+      y: 0 0 0;
+      confine: "sb_hbar_base";
+   }
+   description {
+      state: "default" 0.0;
+      min: 16 16;
+      rel1 {
+         relative: 0.5 0.5;
+         offset: 0 0;
+         to: "sb_hbar_base";
+      }
+      rel2 {
+         relative: 0.5 0.5;
+         offset: 0 0;
+         to: "sb_hbar_base";
+      }
+      image {
+         normal: "c_images/sb_barh.png";
+         border: 10 10 3 3;
+      }
+   }
+   description {
+      state: "clicked" 0.0;
+      inherit: "default" 0.0;
+   }
+}
+part {
+   name: "hbar_bar_thumb";
+   clip_to: "sb_hbar";
+   mouse_events: 0;
+   description {
+      state: "default" 0.0;
+      max: 8 8;
+      min: 8 8;
+      rel1 {
+         to: "e.dragable.hbar";
+      }
+      rel2 {
+         to: "e.dragable.hbar";
+      }
+      image {
+         normal: "images/e17_scrollbar_hdrag_thumb.png";
+      }
+   }
+}
+part {
+   name: "sb_hbar_a1";
+   type: IMAGE;
+   mouse_events: 1;
+   clip_to: "sb_hbar";
+   description {
+      state: "default" 0.0;
+      align: 0.0 0.5;
+      aspect: 1.0 1.0;
+      aspect_preference: VERTICAL;
+      rel1 {
+         to: "sb_hbar";
+      }
+      rel2 {
+         to: "sb_hbar";
+         relative: 0.0 1.0;
+         offset: 0 -1;
+      }
+      image.normal: "c_images/sb_bt_all.png";
+   }
+   description {
+      state: "clicked" 0.0;
+      inherit: "default" 0.0;
+   }
+}
+part {
+   name: "sb_hbar_a2";
+   type: IMAGE;
+   mouse_events: 1;
+   clip_to: "sb_hbar";
+   description {
+      state: "default" 0.0;
+      align: 1.0 0.5;
+      aspect: 1.0 1.0;
+      aspect_preference: VERTICAL;
+      rel1 {
+         to: "sb_hbar";
+         relative: 1.0 0.0;
+         offset: -1 0;
+      }
+      rel2 {
+         to: "sb_hbar";
+      }
+      image.normal: "c_images/sb_bt_all.png";
+   }
+   description {
+      state: "clicked" 0.0;
+      inherit: "default" 0.0;
+   }
+}
+COMMON_FOCUS_PART();

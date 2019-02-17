@@ -1,0 +1,41 @@
+images {
+   image: "c_images/bare_frame.png" COMP ;
+   image: "c_images/bg_vgrad_base.png" COMP;
+   image: "c_images/dialog_bg.png" COMP;
+}
+
+
+// A simple square-cornered 1-pixel frame
+#define SIMPLE_FRAME(NAME,TO)                   \
+part {                                          \
+   name: NAME;                                  \
+   mouse_events: 0;                             \
+   type: IMAGE;                                 \
+   description {                                \
+      rel1.to: TO;                              \
+      rel2.to: TO;                              \
+      image {                                   \
+         normal: "c_images/bare_frame.png";     \
+         border: 1 1 1 1;                       \
+      }                                         \
+   }                                            \
+}
+
+// A radial gradient for dialogs
+#define DIALOG_GRADIENT_PART(NAME)              \
+part {                                          \
+   name: NAME;                                  \
+   type: RECT;                                  \
+   mouse_events: 0;                             \
+   description {                                \
+      state: "default" 0.0;                     \
+      color: DIALOG_BASE 255;                   \
+   }                                            \
+}                                               \
+part { name: NAME"_grad";                       \
+type: IMAGE;                                    \
+   description { state: "default" 0.0;          \
+      image.normal: "c_images/dialog_bg.png";   \
+      color: 255 255 255 100;                   \
+   }                                            \
+}

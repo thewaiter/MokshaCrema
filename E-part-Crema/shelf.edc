@@ -1,0 +1,470 @@
+images {
+   image: "c_images/shelf_hbottom.png" COMP;
+   image: "c_images/bare_frame_light.png" COMP;
+   image: "c_images/shelf_htop.png" COMP;
+   image: "c_images/shelf_vleft.png" COMP;
+   image: "c_images/shelf_vright.png" COMP;
+}
+
+group { name: "e/shelf/default/base";
+   data {
+      // this tells e the border is shaped
+      item: "shaped" "1";
+   }
+   parts {
+      part {
+         name: "base";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            image {
+               normal: "c_images/shelf_htop.png";
+               border: 13 13 1 1;
+            }
+         }
+         description {
+            state: "top_left" 0.0;
+            inherit: "default" 0.0;
+            fill {
+               origin {
+                  offset: -13 0;
+               }
+               size {
+                  offset: 13 0;
+               }
+            }
+         }
+         description {
+            state: "top_right" 0.0;
+            inherit: "default" 0.0;
+            fill {
+               origin {
+                  offset: 0 0;
+               }
+               size {
+                  offset: 13 0;
+               }
+            }
+         }
+         description {
+            state: "bottom" 0.0;
+            image {
+               normal: "c_images/shelf_hbottom.png";
+               border: 13 13 1 1;
+            }
+         }
+         description {
+            state: "bottom_left" 0.0;
+            inherit: "bottom" 0.0;
+            fill {
+               origin {
+                  offset: -13 0;
+               }
+               size {
+                  offset: 13 0;
+               }
+            }
+         }
+         description {
+            state: "bottom_right" 0.0;
+            inherit: "bottom" 0.0;
+            fill {
+               origin {
+                  offset: 0 0;
+               }
+               size {
+                  offset: 13 0;
+               }
+            }
+         }
+         description {
+            state: "left" 0.0;
+            image {
+               normal: "c_images/shelf_vleft.png";
+               border: 1 1 13 13;
+            }
+         }
+         description {
+            state: "left_top" 0.0;
+            inherit: "left" 0.0;
+            fill {
+               origin {
+                  offset: 0 -13;
+               }
+               size {
+                  offset: 0 13;
+               }
+            }
+         }
+         description {
+            state: "left_bottom" 0.0;
+            inherit: "left" 0.0;
+            fill {
+               origin {
+                  offset: 0 0;
+               }
+               size {
+                  offset: 0 13;
+               }
+            }
+         }
+         description {
+            state: "right" 0.0;
+            image {
+               normal: "c_images/shelf_vright.png";
+               border: 1 1 13 13;
+            }
+         }
+         description {
+            state: "right_top" 0.0;
+            inherit: "right" 0.0;
+            fill {
+               origin {
+                  offset: 0 -13;
+               }
+               size {
+                  offset: 0 13;
+               }
+            }
+         }
+         description {
+            state: "right_bottom" 0.0;
+            inherit: "right" 0.0;
+            fill {
+               origin {
+                  offset: 0 0;
+               }
+               size {
+                  offset: 0 13;
+               }
+            }
+         }
+      }
+      part {
+         name: "e.swallow.content";
+         type: SWALLOW;
+         description {
+            state: "default" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 18 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -18 -3;
+            }
+         }
+         description {
+            state: "top_left" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -13 -3;
+            }
+         }
+         description {
+            state: "top_right" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 18 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -3;
+            }
+         }
+         description {
+            state: "bottom" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 18 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -13 -3;
+            }
+         }
+         description {
+            state: "bottom_left" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -13 -3;
+            }
+         }
+         description {
+            state: "bottom_right" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 18 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -3;
+            }
+         }
+         description {
+            state: "left" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 18;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -12;
+            }
+         }
+         description {
+            state: "left_top" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -13;
+            }
+         }
+         description {
+            state: "left_bottom" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 18;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -3;
+            }
+         }
+         description {
+            state: "right" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 18;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -13;
+            }
+         }
+         description {
+            state: "right_top" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -13;
+            }
+         }
+         description {
+            state: "right_bottom" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 18;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -3;
+            }
+         }
+      }
+   }
+   programs {
+      program {
+         name: "orient1";
+         signal: "e,state,orientation,top";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient2";
+         signal: "e,state,orientation,top_left";
+         source: "e";
+         action: STATE_SET "top_left" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient3";
+         signal: "e,state,orientation,top_right";
+         source: "e";
+         action: STATE_SET "top_right" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient4";
+         signal: "e,state,orientation,bottom";
+         source: "e";
+         action: STATE_SET "bottom" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient5";
+         signal: "e,state,orientation,bottom_left";
+         source: "e";
+         action: STATE_SET "bottom_left" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient6";
+         signal: "e,state,orientation,bottom_right";
+         source: "e";
+         action: STATE_SET "bottom_right" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient7";
+         signal: "e,state,orientation,left";
+         source: "e";
+         action: STATE_SET "left" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient8";
+         signal: "e,state,orientation,left_top";
+         source: "e";
+         action: STATE_SET "left_top" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient9";
+         signal: "e,state,orientation,left_bottom";
+         source: "e";
+         action: STATE_SET "left_bottom" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient10";
+         signal: "e,state,orientation,right";
+         source: "e";
+         action: STATE_SET "right" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient11";
+         signal: "e,state,orientation,right_top";
+         source: "e";
+         action: STATE_SET "right_top" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+      program {
+         name: "orient12";
+         signal: "e,state,orientation,right_bottom";
+         source: "e";
+         action: STATE_SET "right_bottom" 0.0;
+         target: "base";
+         target: "e.swallow.content";
+      }
+   }
+}
+
+// Inset is a simple border
+group { name: "e/shelf/default/inset";
+   parts {
+      part {
+         name: "background";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -3;
+            }
+            image {
+               normal: "c_images/bare_frame_light.png";
+               border: 1 1 1 1;
+            }
+            fill {
+               smooth: 0;
+            }
+         }
+      }
+      part {
+         name: "items_clip";
+         type: RECT;
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            rel1 {
+               to: "background";
+               offset: 1 1;
+            }
+            rel2 {
+               to: "background";
+               offset: -1 -1;
+            }
+            color: 255 255 255 255;
+         }
+      }
+      part {
+         name: "e.swallow.content";
+         type: SWALLOW;
+         clip_to: "items_clip";
+         description {
+            state: "default" 0.0;
+            rel1 {
+               offset: 2 2;
+            }
+            rel2 {
+               offset: -2 -2;
+            }
+         }
+      }
+   }
+}
+group { name: "e/shelf/default/plain";
+   parts {
+      part {
+         name: "items_clip";
+         type: RECT;
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            rel1 {
+               offset: 0 0;
+            }
+            rel2 {
+               offset: -1 -1;
+            }
+            color: 255 255 255 255;
+         }
+      }
+      part {
+         name: "e.swallow.content";
+         type: SWALLOW;
+         clip_to: "items_clip";
+         description {
+            state: "default" 0.0;
+            rel1 {
+               offset: 0 0;
+            }
+            rel2 {
+               offset: -1 -1;
+            }
+         }
+      }
+   }
+}

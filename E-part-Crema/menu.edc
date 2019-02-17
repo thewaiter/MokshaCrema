@@ -1,0 +1,518 @@
+images {
+   image: "c_images/menu_selection.png" COMP;
+   image: "c_images/menu_label_shadow.png" COMP;
+   image: "c_images/menu_arrow.png" COMP;
+   image: "c_images/menu_separator.png" COMP;
+}
+
+
+group { name: "e/widgets/menu/default/background";
+   parts {
+      part {
+         name: "whole";
+         mouse_events: 0;
+         type: RECT;
+         description {
+            state: "default" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 0 0;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -1 -1;
+            }
+            color: BORDER_TRIM 255;
+         }
+      }
+      part {
+         name: "base";
+         mouse_events: 0;
+         type: RECT;
+         description {
+            state: "default" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 1 1;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -2 -2;
+            }
+            color: BORDER_BASE 255;
+         }
+      }
+      part {
+         name: "base2";
+         description {
+            state: "default" 0.0;
+
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 0 0;
+               to: "base";
+            }
+            rel2 {
+               relative: 1.0 0.0;
+               offset: -1 36;
+               to: "base";
+            }
+            image.normal: "c_images/bg_vgrad_base.png";
+            fill {
+               smooth: 0;
+               size {
+                  relative: 0 1.0;
+                  offset: 36 0;
+               }
+            }
+         }
+      }
+      part {
+         name: "e.text.title";
+         type: TEXT;
+         effect: SHADOW;
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            visible: 0;
+            fixed: 0 1;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 0 0;
+            }
+            rel2 {
+               relative: 1.0 0.0;
+               offset: -1 0;
+            }
+            color: BORDER_BASE 255;
+            color3: BORDER_TRIM 255;
+            color_class: "menu_title";
+            text {
+               text: "Menu Title";
+               font: "Edje-Vera-Bold";
+               size: 11;
+               min: 0 0;
+               align: 0.5 0.0;
+               text_class: "menu_title";
+               elipsis: 0.0;
+            }
+         }
+         description {
+            state: "active" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            align: 0.5 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 0 4;
+            }
+            rel2 {
+               relative: 1.0 0.0;
+               offset: -1 4;
+            }
+            color_class: "menu_title_active";
+            text {
+               min: 1 1;
+            }
+         }
+      }
+      part {
+         name: "e.swallow.content";
+         type: SWALLOW;
+         description {
+            state: "default" 0.0;
+            rel1 {
+               to_y: "e.text.title";
+               relative: 0.0 1.0;
+               offset: 1 0;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -2 -2;
+            }
+         }
+      }
+   }
+   programs {
+      program {
+         name: "on";
+         signal: "e,action,show,title";
+         source: "e";
+         action: STATE_SET "active" 0.0;
+         target: "e.text.title";
+      }
+      program {
+         name: "off";
+         signal: "e,action,hide,title";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.text.title";
+      }
+   }
+}
+
+
+group { name: "e/widgets/menu/default/separator";
+   parts {
+      part {
+         name: "separator";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            min: 20 1;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 2 2;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -3 -3;
+            }
+            image {
+               normal: "c_images/menu_separator.png";
+               border: 1 1 0 0;
+            }
+            fill {
+               smooth: 0;
+            }
+         }
+      }
+   }
+}
+
+
+group { name: "e/widgets/menu/default/item_bg";
+        alias: "e/widgets/menu/default/submenu_bg";
+   parts {
+      part {
+         name: "item_selection";
+         description {
+            state: "default" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 0 0;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -1 -1;
+            }
+            image {
+               normal: "c_images/menu_selection.png";
+               border: 1 1 0 0;
+            }
+            color: 255 255 255 0;
+         }
+         description {
+            state: "active" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
+      }
+      part {
+         name: "e.swallow.content";
+         type: SWALLOW;
+         description {
+            state: "default" 0.0;
+            align: 0.0 0.0;
+         }
+      }
+   }
+   programs {
+      program {
+         name: "go_active";
+         signal: "e,state,selected";
+         source: "e";
+         action: STATE_SET "active" 0.0;
+         transition: DECELERATE 0.1;
+         target: "item_selection";
+      }
+      program {
+         name: "go_passive";
+         signal: "e,state,unselected";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         transition: DECELERATE 0.1;
+         target: "item_selection";
+      }
+   }
+}
+
+
+group { name: "e/widgets/menu/default/check";
+   parts {
+      part {
+         name: "outline";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            min: 16 16;
+            max: 16 16;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 1 1;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -2 -2;
+            }
+            image {
+               normal: "c_images/check_border.png";
+            }
+         }
+      }
+      part {
+         name: "item1";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            min: 16 16;
+            max: 16 16;
+            visible: 0;
+            rel1 {
+               to: "outline";
+               relative: 0.0 0.0;
+               offset: 0 0;
+            }
+            rel2 {
+               to: "outline";
+               relative: 1.0 1.0;
+               offset: -1 -1;
+            }
+            image {
+               normal: "c_images/check_chosen.png";
+            }
+         }
+         description {
+            state: "active" 0.0;
+            min: 16 16;
+            max: 16 16;
+            visible: 1;
+            rel1 {
+               to: "outline";
+               relative: 0.0 0.0;
+               offset: 0 0;
+            }
+            rel2 {
+               to: "outline";
+               relative: 1.0 1.0;
+               offset: -1 -1;
+            }
+            image {
+               normal: "c_images/check_chosen.png";
+            }
+         }
+      }
+   }
+   programs {
+      program {
+         name: "turn_on1";
+         signal: "e,state,on";
+         source: "e";
+         action: STATE_SET "active" 0.0;
+         target: "item1";
+      }
+      program {
+         name: "turn_off1";
+         signal: "e,state,off";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "item1";
+      }
+   }
+}
+
+
+group { name: "e/widgets/menu/default/radio";
+   parts {
+      part {
+         name: "outline";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            min: 16 16;
+            max: 16 16;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 1 1;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -2 -2;
+            }
+            image {
+               normal: "c_images/radio_border.png";
+            }
+         }
+      }
+      part {
+         name: "item1";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            min: 16 16;
+            max: 16 16;
+            visible: 0;
+            rel1 {
+               to: "outline";
+               relative: 0.0 0.0;
+               offset: 0 0;
+            }
+            rel2 {
+               to: "outline";
+               relative: 1.0 1.0;
+               offset: -1 -1;
+            }
+            image {
+               normal: "c_images/radio_chosen.png";
+            }
+         }
+         description {
+            state: "active" 0.0;
+            min: 16 16;
+            max: 16 16;
+            visible: 1;
+            rel1 {
+               to: "outline";
+               relative: 0.0 0.0;
+               offset: 0 0;
+            }
+            rel2 {
+               to: "outline";
+               relative: 1.0 1.0;
+               offset: -1 -1;
+            }
+            image {
+               normal: "c_images/radio_chosen.png";
+            }
+         }
+      }
+   }
+   programs {
+      program {
+         name: "turn_on1";
+         signal: "e,state,on";
+         source: "e";
+         action: STATE_SET "active" 0.0;
+         target: "item1";
+      }
+      program {
+         name: "turn_off1";
+         signal: "e,state,off";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "item1";
+      }
+   }
+}
+
+
+group { name: "e/widgets/menu/default/icon";
+   parts {
+      part {
+         name: "e.swallow.content";
+         type: SWALLOW;
+         description {
+            state: "default" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 4 4;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -5 -5;
+            }
+         }
+      }
+   }
+}
+
+
+group { name: "e/widgets/menu/default/label";
+   parts {
+      part {
+         name: "e.text.label";
+         type: TEXT;
+         effect: SHADOW;
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 8 6;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -8 -6;
+            }
+            color: 0 0 0 255;
+            color3: 255 255 255 128;
+            color_class: "menu_item";
+            text {
+               text: "Item Label";
+               font: "Edje-Vera";
+               size: 10;
+               min: 1 1;
+               align: 0.0 0.5;
+               text_class: "menu_item";
+            }
+         }
+      }
+   }
+}
+
+
+group { name: "e/widgets/menu/default/submenu";
+   parts {
+      part {
+         name: "arrow";
+         mouse_events: 0;
+         description {
+            state: "default" 0.0;
+            min: 6 12;
+            max: 6 12;
+            rel1 {
+               relative: 0.0 0.0;
+               offset: 3 0;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -4 -1;
+            }
+            image {
+               normal: "c_images/menu_arrow.png";
+            }
+            color: 255 255 255 255;
+         }
+         description {
+            state: "hidden" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 0;
+         }
+      }
+   }
+   // This gives a single soft blink
+   programs {
+      program { name: "go_active";
+         signal: "e,state,selected";
+         source: "e";
+         action: STATE_SET "hidden" 0.0;
+         transition: DECELERATE 0.3;
+         target: "arrow";
+         after: "go_inactive";
+      }
+      program { name: "go_inactive";
+         signal: "";
+         source: "";
+         action: STATE_SET "default" 0.0;
+         transition: DECELERATE 0.3;
+         target: "arrow";
+      }
+      program { name: "go_passive";
+         signal: "e,state,unselected";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         transition: DECELERATE 0.3;
+         target: "arrow";
+      }
+   }
+}
