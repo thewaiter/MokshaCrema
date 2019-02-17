@@ -65,6 +65,7 @@ collections {
 #include "milky_mixer.edc"
 #include "systray.edc"
 #include "tasks.edc"
+#include "everything.edc"
 //~ #include "milky_net.edc"
 #include "milky_init.edc"
 #include "forecasts_module.edc"
