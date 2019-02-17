@@ -292,7 +292,7 @@ group { name: "e/widgets/entry/selection";
          type: RECT;
          description {
             state: "default" 0.0;
-            color: 245 205 109 102;
+            color: 229 229 229 128;
          }
       }
    }
