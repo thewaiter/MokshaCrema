@@ -626,8 +626,8 @@ parts {
 			type: RECT;
 			description { state: "default" 0.0;
 				color: 0 0 0 0;
-				rel1.offset: 2 2;
-				rel2.offset: -3 -3;
+				rel1.offset: 0 0;
+				rel2.offset: 0 0;
 			}
 			description { state: "show-date" 0.0;
 				inherit: "default" 0.0;
@@ -643,8 +643,8 @@ parts {
 			scale: 1;
 			description { state: "default" 0.0;
 				//				TEXT_COLOR;
-				color: 236 189 117 255;
-				color3: 0 0 0 200;
+				color3: 232 182 107 255;
+				color: 5 5 5 128;
 				rel1.to: "time-area";
 				rel2.to: "time-area";
 				text {
@@ -680,8 +680,8 @@ parts {
 			scale: 1;
 			description { state: "default" 0.0;
 				//TEXT_COLOR
-				color: 0 0 0 198;
-				color3: 255 255 255 30;
+				color3: 232 182 107 255;
+				color: 5 5 5 128;
 				align: 0.5 1.0;
 				min: 5 8;
 				max: 9999 30;
@@ -816,7 +816,7 @@ group { name: "e/modules/clock/calendar/dayname";
 				mouse_events: 0;
 				description { state: "default" 0.0;
 					color: 232 182 107 255;
-					color3: 0 0 0 255;
+					color3: 5 5 5 128;
 					align: 0.5 0.5;
 					rel1.offset: 3 3;
 					rel2.offset: -3 -3;
