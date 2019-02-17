@@ -855,7 +855,7 @@ images {
             description {
                state: "selected" 0.0;
                inherit: "default" 0.0;
-               color: 232 182 107 255;; // selector header color
+               color: 232 182 107 255; // selector header color
             }
          }
          part {
@@ -944,7 +944,7 @@ images {
                color: 24 24 24 255;
                text {
                   font: "Sans:style=Bold";
-                  size: 9;
+                  size: 12;
                   min: 0 1;
                   align: 0.0 1.0;
                   text_class: "fileman_typebuf";
