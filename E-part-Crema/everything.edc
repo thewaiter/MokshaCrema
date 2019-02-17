@@ -782,6 +782,7 @@ images {
                   normal: "bt_dis_shine.png";
                   border: 4 4 4 4;
                }
+                color: 255 255 255 0;
             }
          }
          part {
@@ -854,7 +855,7 @@ images {
             description {
                state: "selected" 0.0;
                inherit: "default" 0.0;
-               color: 200 200 200 255;
+               color: 232 182 107 255;; // selector header color
             }
          }
          part {
@@ -1106,14 +1107,14 @@ images {
                color: 200 200 200 20;
                image {
                   normal: "toolbar_sel.png";
-                  border: 2 2 0 0;
+                  border: 2 2 2 2;
                }
                fill.smooth: 1;
             }
             description {
                state: "selected" 0.0;
                inherit: "default" 0.0;
-               color: 200 200 200 255;
+               color: 232 182 107 255;
             }
          }
          part {
@@ -1129,13 +1130,13 @@ images {
                fixed: 0 1;
                rel1.to: "clip";
                rel2.to: "clip";
-               rel1.offset: 5 3;
+               rel1.offset: 5 0;
                rel2.offset: -6 -1;
                visible: 0;
                color: 245 245 245 255;
                text {
                   font: "Sans:style=Bold";
-                  size: 9;
+                  size: 10;
                   min: 0 1;
                   align: 0.5 0.5;
                   text_class: "fileman_icon";
@@ -1347,7 +1348,7 @@ images {
                   normal: "outline.png";
                   border: 5 5 5 5;
                }
-               color: 227 146 21 255;
+               color: 232 182 107 255;
             }
             description {
                state: "selected" 0.0;
