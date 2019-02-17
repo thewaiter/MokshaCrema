@@ -1,8 +1,8 @@
 
 group { name: "e/widgets/syscon/main";
    images {
-      image: "c_images/button_shadow.png";
-      image: "c_images/button_highlight.png";
+      image: "c_images/button_shadow.png" COMP;
+      image: "c_images/button_highlight.png" COMP;
    }
    parts {
       DIALOG_GRADIENT_PART("base");
@@ -178,8 +178,8 @@ group { name: "e/widgets/syscon/main";
 
 group { name: "e/widgets/syscon/item/button";
    images {
-      image: "c_images/button_shadow.png";
-      image: "c_images/button_highlight.png";
+      image: "c_images/button_shadow.png" COMP;
+      image: "c_images/button_highlight.png" COMP;
    }
    parts {
       part { name: "button_image";

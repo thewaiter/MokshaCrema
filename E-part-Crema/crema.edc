@@ -63,7 +63,7 @@ collections {
 #include "milky_cpufreq.edc"
 #include "milky_mem.edc"
 #include "milky_mixer.edc"
-#include "milky_net.edc"
+//~ #include "milky_net.edc"
 #include "milky_init.edc"
 #include "forecasts_module.edc"
 #include "net_module.edc"
