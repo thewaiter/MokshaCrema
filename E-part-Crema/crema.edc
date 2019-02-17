@@ -67,6 +67,7 @@ collections {
 #include "tasks.edc"
 #include "everything.edc"
 #include "gadman.edc"
+#include "battery.edc"
 //~ #include "milky_net.edc"
 #include "milky_init.edc"
 #include "forecasts_module.edc"
