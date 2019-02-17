@@ -879,6 +879,8 @@ group { name: "e/modules/clock/calendar/dayname";
 				}
 				description { state: "today" 0.0;
 					inherit: "default" 0.0;
+					color:  255 255 255 255;
+					color3: 0 0 0 0;
 					text.font: FONT_BOLD;
 				}
 				description { state: "hidden" 0.0;
