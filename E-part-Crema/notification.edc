@@ -16,7 +16,7 @@
       // NOTIFICATION: No Wrap Style for messages
       style {
          name: "notification_style_nowrap";
-         base: "font=Sans font_size=12 align=left color=#000f wrap=none ellipsis=-1";
+         base: "font=Sans font_size=12 align=left color=#ffff style=soft_outline outline_color=#00000040 wrap=none ellipsis=-1";
          tag:  "br" "\n";
          tag:  "ps" "ps";
          tag:  "b" "+ font=Sans:style=Bold text_class=module_bold";
