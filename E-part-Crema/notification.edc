@@ -139,7 +139,7 @@
          }
          part {
             name: "notification.text.title";
-            type: TEXT;
+            type: TEXTBLOCK;
             mouse_events: 0;
             clip_to: "titleclip";
             effect: SOFT_OUTLINE; // SHADOW BOTTOM;
@@ -152,19 +152,11 @@
                rel2.relative: 0.0 0.0;
                rel2.to_x: "e.event.close";
                rel2.offset: -5 12;
-               color: 255 255 255 255;
-               color2: 0 0 20 128;
-               color3: 0 0 20 128;
                align: 0.0 0.0;
                color_class: "notification_title";
                text {
-                  font: "Sans:style=Bold";
-                  size: 10;
-                  text: "title goes here blah blah";
+                  style: "notification_style_nowrap";
                   min: 0 1;
-                  align: 0.0 0.5;
-                  ellipsis: -1;
-                  text_class: "notification_title";
                }
                fixed: 0 1;
             }
