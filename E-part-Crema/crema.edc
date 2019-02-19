@@ -69,6 +69,7 @@ collections {
 #include "gadman.edc"
 #include "battery.edc"
 #include "notification.edc"
+#include "widgets.edc"
 //~ #include "milky_net.edc"
 #include "milky_init.edc"
 #include "forecasts_module.edc"
