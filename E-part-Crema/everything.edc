@@ -927,6 +927,7 @@ images {
          part {
             name: "e.text.label";
             type: TEXT;
+            effect: SHADOW;
             mouse_events: 0;
             clip_to: "clip";
             scale: 1;
@@ -941,7 +942,8 @@ images {
                rel1.offset: 2 3;
                rel2.offset: -6 -7;
                /* visible: 0; */
-               color: 24 24 24 255;
+               color3: 210 160 82 220;
+               color: 44 44 44 255;
                text {
                   font: "Sans:style=Bold";
                   size: 12;
@@ -954,6 +956,7 @@ images {
                state: "selected" 0.0;
                inherit: "default" 0.0;
                color: 244 244 244 255;
+               color3: 20  20  20 220;
                /* visible: 1; */
             }
          }
@@ -976,7 +979,7 @@ images {
                color3: 0 0 0 0;
                text {
                   font: "Sans";
-                  size: 9;
+                  size: 10;
                   min: 0 1;
                   align: 1.0 0.0;
                   text_class: "fileman_icon";
@@ -1334,7 +1337,7 @@ images {
             description {
                state: "selected" 0.0;
                inherit: "default" 0.0;
-               color: 255 255 255 190;
+               color: 210 161 82 190;
             }
          }
          part {
@@ -1514,7 +1517,8 @@ images {
                }
                rel2.offset: -2 -4;
                color: 250 250 250 255;
-               color3: 20 20 20 40;
+               color3: 20 20 20 220;
+               text.font: "Sans:Style=Bold";
             }
          }
          
@@ -1746,7 +1750,7 @@ images {
                   normal: "outline.png";
                   border: 5 5 5 5;
                }
-               color: 232 182 107 255;;
+               color: 232 182 107 255;
             }
             description {
                state: "selected" 0.0;
