@@ -208,6 +208,7 @@ group { name: "e/fileman/default/list/fixed";
                size: 10;
                min: 1 1;
                align: 0.0 0.5;
+               ellipsis: -1;
                text_class: "ilist_item";
             }
          }
@@ -510,6 +511,7 @@ group { name: "e/fileman/default/list_odd/fixed";
                size: 10;
                min: 1 1;
                align: 0.0 0.5;
+               ellipsis: -1;
                text_class: "ilist_item";
             }
          }
