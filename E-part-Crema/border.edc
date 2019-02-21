@@ -176,6 +176,8 @@ images {
    image: "images/e17_button_detail_stack_normal.png" COMP;
    image: "images/e17_button_detail_stack_below.png" COMP;
    image: "images/e17_button_detail_properties.png" COMP;
+   image: "images/e17_button_detail_resize_icon.png" COMP;
+   image: "images/e17_button_detail_move_icon.png" COMP;
 }
 
 // The whole part is the entire background of the border --- a big box
@@ -837,6 +839,8 @@ group { name: "e/widgets/border/default/"TYPE;                          \
 FULL_SIZE_BORDER_BUTTON("close")
 FULL_SIZE_BORDER_BUTTON("minimize")
 FULL_SIZE_BORDER_BUTTON("maximize")
+FULL_SIZE_BORDER_BUTTON("resize_icon")
+FULL_SIZE_BORDER_BUTTON("move_icon")
 FULL_SIZE_BORDER_BUTTON("shade")
 FULL_SIZE_BORDER_BUTTON("stick")
 FULL_SIZE_BORDER_BUTTON("kill")
