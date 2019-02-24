@@ -2,7 +2,8 @@
  * Crema theme for e17
  * Glen 'g60' Larsen, March 2007
  * Updated by Agustin Verdegal March 2012
- *
+ * Updated by Stefan Uram Feb 2019
+ * 
  * Fairly basic theme with color inspiration from the chocolate colors
  * in the tango palette.
  */
@@ -14,7 +15,7 @@ data {
   item: "theme/version"	CREMA_VERSION;
   item: "theme/license"	"Gpl 3";
   item: "theme/updated"	"Agust";
-  item: "gtk-theme"     "MokshaCrema";
+  item: "gtk-theme"     "MokshaCrema-GTK";
 }
 
 fonts {
