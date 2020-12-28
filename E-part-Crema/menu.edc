@@ -432,6 +432,7 @@ group { name: "e/widgets/menu/default/label";
       part {
          name: "e.text.label";
          type: TEXT;
+         scale: 1;
          effect: SHADOW;
          mouse_events: 0;
          description {
