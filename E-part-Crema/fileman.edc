@@ -949,6 +949,8 @@ group { name: "e/fileman/default/icon/variable";
             description {
                state: "default" 0.0;
                color: 0 0 0 0;
+               image.normal: "c_images/icon_efm_vol_mounted.png";
+               visible: 0;
             }
             description {
                state: "visible" 0.0;
@@ -964,6 +966,8 @@ group { name: "e/fileman/default/icon/variable";
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "c_images/icon_efm_vol_mounted.png";
+               visible: 1;
             }
             description {
                state: "unmounted" 0.0;
@@ -973,7 +977,6 @@ group { name: "e/fileman/default/icon/variable";
             description {
                state: "mounted" 0.0;
                inherit: "visible" 0.0;
-               image.normal: "c_images/icon_efm_vol_mounted.png";
             }
          }
          part {
@@ -984,6 +987,8 @@ group { name: "e/fileman/default/icon/variable";
             description {
                state: "default" 0.0;
                color: 0 0 0 0;
+               image.normal: "c_images/icon_efm_dnd_ask.png";
+               visible: 0;
             }
             description {
                state: "visible" 0.0;
@@ -993,6 +998,8 @@ group { name: "e/fileman/default/icon/variable";
                min: 24 24;
                rel1.relative: 0.75 0.0;
                rel2.relative: 1.0 1.0;
+               image.normal: "c_images/icon_efm_dnd_ask.png";
+               visible: 1;
             }
             description {
                state: "copy" 0.0;
@@ -1459,6 +1466,8 @@ group { name: "e/fileman/default/icon/fixed";
          description {
             state: "default" 0.0;
             color: 0 0 0 0;
+            image.normal: "c_images/icon_efm_vol_mounted.png";
+            visible: 0;
          }
          description {
             state: "visible" 0.0;
@@ -1474,6 +1483,7 @@ group { name: "e/fileman/default/icon/fixed";
                relative: 1.0 1.0;
                to: "icon";
             }
+            image.normal: "c_images/icon_efm_vol_mounted.png";
          }
          description {
             state: "unmounted" 0.0;
@@ -1483,7 +1493,6 @@ group { name: "e/fileman/default/icon/fixed";
          description {
             state: "mounted" 0.0;
             inherit: "visible" 0.0;
-            image.normal: "c_images/icon_efm_vol_mounted.png";
          }
       }
       part {
@@ -1494,6 +1503,8 @@ group { name: "e/fileman/default/icon/fixed";
          description {
             state: "default" 0.0;
             color: 0 0 0 0;
+            image.normal: "c_images/icon_efm_dnd_ask.png";
+            visible: 0;
          }
          description {
             state: "visible" 0.0;
@@ -1503,6 +1514,8 @@ group { name: "e/fileman/default/icon/fixed";
             min: 24 24;
             rel1.relative: 0.75 0.0;
             rel2.relative: 1.0 1.0;
+            image.normal: "c_images/icon_efm_dnd_ask.png";
+            visible: 1;
          }
          description {
             state: "copy" 0.0;

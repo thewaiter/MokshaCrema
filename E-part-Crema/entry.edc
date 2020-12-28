@@ -1,5 +1,6 @@
 images {
    image: "c_images/frame_label_over.png" COMP;
+   image: "images/focus.png" COMP;
 }
 
 group {
@@ -56,8 +57,8 @@ group {
          clip_to: "focus_clip";
          description {
             state: "default" 0.0;
-            //~ image.normal: "focus.png";
-            //~ image.border: 7 7 7 7;
+            image.normal: "images/focus.png";
+            image.border: 7 7 7 7;
             rel1 { 
                to: "entry"; 
                relative: 0.0 0.0; 
