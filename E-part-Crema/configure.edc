@@ -1,7 +1,7 @@
 images {
-   image: "images/e17_menu_bg_border.png" COMP;
+   //~ image: "images/e17_menu_bg_border.png" COMP;
    image: "images/e17_logo.png" COMP;
-   image: "images/e17_menu_bg.png" COMP;
+   //~ image: "images/e17_menu_bg.png" COMP;
 }
 
 group { name: "e/widgets/configure/main";

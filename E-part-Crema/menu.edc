@@ -1,6 +1,6 @@
 images {
    image: "c_images/menu_selection.png" COMP;
-   image: "c_images/menu_label_shadow.png" COMP;
+   //~ image: "c_images/menu_label_shadow.png" COMP;
    image: "c_images/menu_arrow.png" COMP;
    image: "c_images/menu_separator.png" COMP;
 }

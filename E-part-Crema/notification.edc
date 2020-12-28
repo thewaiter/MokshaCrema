@@ -109,7 +109,7 @@ group { name: "e/modules/notification/logo";
    group {
       name: "e/modules/notification/main";
       images.image: "base_bg.png" COMP;
-      images.image: "images/e17_button_detail_close" COMP;
+      images.image: "images/e17_button_detail_close.png" COMP;
       data.item: "app_icon_max" "48 48";
       //data.item: "shaped" "1";
       parts {

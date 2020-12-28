@@ -552,7 +552,7 @@ images {
          image: "everything_box.png" COMP;
          image: "everything_item_bg.png" COMP;
          image: "vgrad_light.png" COMP;
-         image: "vgrad_dark.png" COMP;
+         //~ image: "vgrad_dark.png" COMP;
          image: "bt_dis_hilight.png" COMP;
          image: "bt_dis_shine.png" COMP;
          image: "bt_dis_base.png" COMP;

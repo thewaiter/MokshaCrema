@@ -4,7 +4,7 @@ group { name: "e/fileman/default/list/fixed";
    images {
       image: "images/e17_mini_button_shadow2.png" COMP;
       image: "images/e17_fileman_thumb_bg.png" COMP;
-      image: "c_images/fileman_icon_button.png" COMP;
+      //~ image: "c_images/fileman_icon_button.png" COMP;
    }
    parts {
       SB_BASE_PART(0);
