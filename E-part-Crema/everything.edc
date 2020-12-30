@@ -1431,7 +1431,7 @@ images {
                rel2 {
                   to: "base";
                   relative: 1.0 1.0;
-                  offset: -3  -21;
+                  offset: -3  -23;
                }
             }
          }
@@ -1497,9 +1497,9 @@ images {
                   offset: 2 -18;
                   relative: 0.0 1.0;
                }
-               rel2.offset: -2 -4;
+               rel2.offset: -2 -8;
+               color: 5 5 5 128;
                color3: 232 182 107 255;
-			   color: 5 5 5 128;
                text {
                   font: "Sans";
                   size: 10;
@@ -1515,7 +1515,7 @@ images {
                   offset: 2 -18;
                   relative: 0.0 1.0;
                }
-               rel2.offset: -2 -4;
+               rel2.offset: -2 -8;
                color: 250 250 250 255;
                color3: 20 20 20 220;
                text.font: "Sans:Style=Bold";
@@ -1789,11 +1789,11 @@ images {
                color: 255 255 255 255;
                rel1 {
                   relative: 0.0 0.0;
-                  offset: 0   3;
+                  offset: 0  0;
                }
                rel2 {
                   relative: 1.0 1.0;
-                  offset: -5  -4;
+                  offset: -5  0;
                }
             }
          }
@@ -1894,12 +1894,12 @@ images {
                rel1 {
                   to_x: "clip";
                   to_y: "base";
-                  offset: 5 2;
+                  offset: 3 0;
                   relative: 1.0 0.0;
                }
                rel2 {
                   relative: 0.0 1.0;
-                  offset: 4 -1;
+                  offset: 4  0;
                   to_x: "arrow";
                   to_y: "spacer";
                }
