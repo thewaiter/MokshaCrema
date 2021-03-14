@@ -1,2 +1,2 @@
 #!/bin/sh
-edje_cc $@ -id . -fd . crema.edc -o A-crema.edj
+edje_cc $@ -id . -fd . crema.edc -o MokshaCrema.edj
