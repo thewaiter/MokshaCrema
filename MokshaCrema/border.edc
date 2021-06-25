@@ -299,6 +299,7 @@ part {                                          \
    type: TEXT;                                  \
    effect: SHADOW;                              \
    mouse_events: 0;                             \
+   scale: 1;                                    \
    description {                                \
       state: "default" 0.0;                     \
       rel1 {                                    \
@@ -317,7 +318,7 @@ part {                                          \
       text {                                    \
          text: "";                              \
          font: "Edje-Vera";                     \
-         size: 12;                              \
+         size: 10;                              \
          min: 0 1;                              \
          align: 0.0 0.5;                        \
          text_class: "title_bar";               \

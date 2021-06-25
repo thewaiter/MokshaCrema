@@ -100,6 +100,7 @@ group { name: "e/widgets/slider_vertical";
          type: TEXT;
          mouse_events: 0;
          clip_to: "clip";
+         scale: 1;
          description {
             state: "default" 0.0;
             visible: 0;
@@ -348,6 +349,7 @@ group { name: "e/widgets/slider_horizontal";
          type: TEXT;
          mouse_events: 0;
          clip_to: "clip";
+         scale: 1;
          description {
             state: "default" 0.0;
             visible: 0;

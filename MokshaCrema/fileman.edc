@@ -187,6 +187,7 @@ group { name: "e/fileman/default/list/fixed";
          type: TEXT;
          effect: SHADOW;
          mouse_events: 0;
+         scale: 1;
          description {
             state: "default" 0.0;
             min: 16 16;
@@ -490,6 +491,7 @@ group { name: "e/fileman/default/list_odd/fixed";
          type: TEXT;
          effect: SHADOW;
          mouse_events: 0;
+         scale: 1; 
          description {
             state: "default" 0.0;
             min: 16 16;
