@@ -172,7 +172,7 @@ group { name: "e/widgets/entry/text";
             base: "font="FN" font_size=9 color=#000000ff text_class=entry color_classs=entry_text";
          }
          style { name: "entry_textblock_disabled_style";
-            base: "font="FN" font_size=10 color=#98cd57 style=shadow,bottom shadow_color=#ffffff19 text_class=entry color_class=entry_text_disabled";
+            base: "font="FN" font_size=10 color=#555555 style=shadow,bottom shadow_color=#ffffff19 text_class=entry color_class=entry_text_disabled";
          }
       }
    parts {
