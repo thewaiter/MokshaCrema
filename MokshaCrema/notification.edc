@@ -3,7 +3,7 @@
  styles {
  style {
          name: "notification_style";
-         base: "font=Sans font_size=12 align=left color=#000f wrap=word ellipsis=-1";
+         base: "font=Sans font_size=11 align=left color=#000f wrap=word ellipsis=-1";
          tag:  "br" "\n";
          tag:  "ps" "ps";
          tag:  "b" "+ font=Sans:style=Bold text_class=module_bold";
@@ -16,7 +16,7 @@
       // NOTIFICATION: No Wrap Style for messages
       style {
          name: "notification_style_nowrap";
-         base: "font=Sans font_size=12 align=left color=#E9B96E style=soft_shadow shadow_color=#20202040 wrap=none ellipsis=-1";
+         base: "font=Sans font_size=11 align=left color=#E9B96E style=soft_shadow shadow_color=#20202040 wrap=none ellipsis=-1";
          tag:  "br" "\n";
          tag:  "ps" "ps";
          tag:  "b" "+ font=Sans:style=Bold text_class=module_bold";
@@ -162,6 +162,7 @@ group { name: "e/modules/notification/logo";
             type: TEXTBLOCK;
             mouse_events: 0;
             clip_to: "bodyclip";
+            scale:1;
             description {
                state: "default" 0.0;
                align: 0.0 0.0;
