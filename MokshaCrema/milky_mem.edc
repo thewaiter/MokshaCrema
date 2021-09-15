@@ -542,7 +542,7 @@ part {
 						font: "Sans";
 						size: 8;
 						min: 1 1;
-						align: 0 1;
+						align: 0.5 1;
 						text_class: "module_small";
 					}
 				}
@@ -588,7 +588,7 @@ part {
 						font: "Sans";
 						size: 8;
 						min: 1 1;
-						align: 0 0;
+						align: 0.5 0;
 						text_class: "module_small";
 					}
 				}
@@ -617,9 +617,9 @@ part {
 			program 
 			{
 				name: "go_active";
-				//~ signal: "label_active";
-				signal: "mouse,in"; 
-				source: "over";
+				signal: "label_active";
+				//~ signal: "mouse,in"; 
+				source: "";
 				action: STATE_SET "visible" 0.0;
 				transition: SINUSOIDAL 0.5;
 				target: "real_label";
@@ -642,9 +642,9 @@ part {
 			program 
 			{
 				name: "go_passive";
-				//~ signal: "label_passive";
-				signal: "mouse,out"; 
-				source: "over";
+				signal: "label_passive";
+				//~ signal: "mouse,out"; 
+				source: "";
 				action: STATE_SET "default" 0.0;
 				transition: SINUSOIDAL 1.0;		  
 				target: "real_label";
