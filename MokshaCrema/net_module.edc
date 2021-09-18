@@ -107,7 +107,7 @@ images
 			    min: 1 1;
 			    align: 0.0 0.5;
 			    text_class: "menu_item";
-			    elipsis: 0.0;
+			    ellipsis: -1;
 			 }
 		    }
 		  description 
@@ -151,7 +151,7 @@ images
 			    min: 1 1;
 			    align: 0.0 0.5;
 			    text_class: "menu_item";
-			    elipsis: 0.0;
+			    ellipsis: -1;
 			 }
 		    }
 		  description 
