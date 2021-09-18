@@ -24,6 +24,9 @@ fonts {
    font: "VeraBd.ttf" "Edje-Vera-Bold";
 }
 
+#define NO_COLOR                 255 255 255 0
+#define VISIBLE                  255 255 255 255
+
 // border & dialog meat
 #define BORDER_TRIM  46  52  54
 #define BORDER_BASE 233 185 110

@@ -1,6 +1,3 @@
-#define NO_COLOR                 255 255 255 0
-#define VISIBLE                  255 255 255 255
-
 color_classes {
 	color_class { name: "mem_module_real";
 		color: 6 101 244 128; 
