@@ -83,4 +83,5 @@ collections {
 #include "start.edc"
 #include "toolbar.edc"
 #include "sys.edc"
+#include "xkbswitch.edc"
 }
