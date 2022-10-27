@@ -476,8 +476,8 @@
             description {
                state: "iconified" 0.0;
                inherit: "default" 0.0;
-               rel1.relative: 0.25 0.25;
-               rel2.relative: 0.75 0.75;
+               rel1.relative: 0.1 0.1;
+               rel2.relative: 0.9 0.9;
             }
          }
          part {
