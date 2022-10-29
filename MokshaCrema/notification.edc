@@ -153,11 +153,12 @@ group { name: "e/modules/notification/logo";
          part {
             name: "bodyclip";
             type: RECT;
+            scale: 1;
             description {
                state: "default" 0.0;
                rel2.offset: -13 -13;
                //min: 220 80;
-               min: 300 150;    /* **** */
+               min: 220 115;    /* **** */
             }
          }
          part {
