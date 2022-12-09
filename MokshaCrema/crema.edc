@@ -47,6 +47,7 @@ collections {
 #include "button.edc"
 #include "configure.edc"
 #include "dialog.edc"
+#include "ibar-ibox.edc"
 #include "menu.edc"
 #include "move_resize.edc"
 #include "radio.edc"
