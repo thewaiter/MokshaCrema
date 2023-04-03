@@ -16,7 +16,7 @@ data {
   item: "theme/license"	"Gpl 3";
   item: "theme/updated"	"Agust";
   item: "gtk-theme"     "MokshaCrema-GTK";
-  item: "icon-theme"    "Icons-Moksha-Crema";
+  //~ item: "icon-theme"    "Icons-Moksha-Crema";
 }
 
 fonts {
