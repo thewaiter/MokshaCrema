@@ -11,12 +11,12 @@
 #define CREMA_VERSION "2.0"
 
 data {
-  item: "theme/name"	"Crema";
-  item: "theme/version"	CREMA_VERSION;
-  item: "theme/license"	"Gpl 3";
-  item: "theme/updated"	"Agust";
-  item: "gtk-theme"     "MokshaCrema-GTK";
-  item: "icon-theme"    "Icons-Moksha-Crema";
+  item: "theme/name"     "Crema";
+  item: "theme/version"   CREMA_VERSION;
+  item: "theme/license"  "Gpl 3";
+  item: "theme/updated"  "Agust";
+  item: "gtk-theme"      "MokshaCrema-GTK";
+  item: "icon-theme"     "Icons-Moksha-Crema";
 }
 
 fonts {
@@ -24,8 +24,8 @@ fonts {
    font: "VeraBd.ttf" "Edje-Vera-Bold";
 }
 
-#define NO_COLOR                 255 255 255 0
-#define VISIBLE                  255 255 255 255
+#define NO_COLOR 255 255 255 0
+#define VISIBLE  255 255 255 255
 
 // border & dialog meat
 #define BORDER_TRIM  46  52  54
