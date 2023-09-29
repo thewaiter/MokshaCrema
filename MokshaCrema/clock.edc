@@ -591,7 +591,7 @@ parts {
 			description { state: "default" 0.0;
 				//				TEXT_COLOR;
 				color3: 232 182 107 255;
-				color: 5 5 5 128;
+				color: 5 5 5 192;
 				rel1.to: "time-area";
 				rel2.to: "time-area";
 				text {
@@ -628,7 +628,7 @@ parts {
 			description { state: "default" 0.0;
 				//TEXT_COLOR
 				color3: 232 182 107 255;
-				color: 5 5 5 128;
+				color: 5 5 5 192;
 				align: 0.5 1.0;
 				min: 5 8;
 				max: 9999 30;
