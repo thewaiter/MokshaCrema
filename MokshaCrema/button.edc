@@ -30,6 +30,14 @@ group { name: "e/widgets/button";
             color: 255 255 255 255;
          }
          description {
+            state: "focused" 0.0;
+            inherit: "default" 0.0;
+            image {
+               normal: "c_images/button_highlight.png";
+               border: 8 8 8 8;
+            }
+         }
+         description {
             state: "active" 0.0;
             inherit: "default" 0.0;
             color: 255 255 255 166;
@@ -203,6 +211,18 @@ group { name: "e/widgets/button";
          target: "button_border";
          target: "e.text.label";
          target: "event";
+      }
+      program {
+         name: "focus_in";
+         signal: "e,state,focused"; source: "e";
+         action: STATE_SET "focused" 0.0;
+         target: "button_image";
+      }
+      program {
+         name: "focus_out";
+         signal: "e,state,unfocused"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "button_image";
       }
    }
 }

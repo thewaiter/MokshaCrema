@@ -28,6 +28,21 @@ group { name: "e/widgets/radio";
    }
    parts {
       BUTTON_OUTLINE_PT("radio_border.png")
+      part { name: "focused";
+         description { state: "default" 0.0;
+            rel1.offset: -3 0;
+            rel2.offset:  3 0;
+            color: 255 255 255 128;
+            image.normal: "c_images/button_shadow.png";
+            image.border: 9 9 9 9;
+            visible: 0;
+            offscale;
+       }
+       description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+        }
+      }
       BUTTON_CHOSEN_PT("radio_chosen.png")
       BUTTON_TEXT_PT("radio")
       BUTTON_EVENT_PT()
@@ -53,6 +68,18 @@ group { name: "e/widgets/radio";
          target: "outline";
          target: "event";
          target: "e.text.label";
+      }
+      program {
+         name: "focus_in";
+         signal: "e,state,focused"; source: "e";
+         action: STATE_SET "focused" 0.0;
+         target: "focused";
+      }
+      program {
+         name: "focus_out";
+         signal: "e,state,unfocused"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "focused";
       }
    }
 }
@@ -92,6 +119,21 @@ group { name: "e/widgets/radio_icon";
                offset: -2 -2;
             }
          }
+      }
+      part { name: "focused";
+         description { state: "default" 0.0;
+            rel1.offset: -3 0;
+            rel2.offset:  3 0;
+            color: 255 255 255 128;
+            image.normal: "c_images/button_shadow.png";
+            image.border: 9 9 9 9;
+            visible: 0;
+            offscale;
+       }
+       description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+        }
       }
       part {
          name: "icon_clip";
@@ -200,6 +242,18 @@ group { name: "e/widgets/radio_icon";
          target: "event";
          target: "e.text.label";
          target: "icon_clip";
+      }
+      program {
+         name: "focus_in";
+         signal: "e,state,focused"; source: "e";
+         action: STATE_SET "focused" 0.0;
+         target: "focused";
+      }
+      program {
+         name: "focus_out";
+         signal: "e,state,unfocused"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "focused";
       }
    }
 }

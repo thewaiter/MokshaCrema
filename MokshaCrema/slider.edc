@@ -72,6 +72,21 @@ group { name: "e/widgets/slider_vertical";
             }
          }
       }
+      part { name: "focused";
+         description { state: "default" 0.0;
+            rel1.offset: -3 0;
+            rel2.offset:  3 0;
+            color: 255 255 255 128;
+            image.normal: "c_images/button_shadow.png";
+            image.border: 9 9 9 9;
+            visible: 0;
+            offscale;
+       }
+       description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+        }
+      }
       part {
          name: "sld_runner";
          mouse_events: 0;
@@ -296,6 +311,18 @@ group { name: "e/widgets/slider_vertical";
          target: "clip";
          target: "catch";
       }
+      program {
+         name: "focus_in";
+         signal: "e,state,focused"; source: "e";
+         action: STATE_SET "focused" 0.0;
+         target: "focused";
+      }
+      program {
+         name: "focus_out";
+         signal: "e,state,unfocused"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "focused";
+      }
    }
 }
 
@@ -326,6 +353,21 @@ group { name: "e/widgets/slider_horizontal";
                offset: -1 -3;
             }
          }
+      }
+      part { name: "focused";
+         description { state: "default" 0.0;
+            rel1.offset: -3 0;
+            rel2.offset:  3 0;
+            color: 255 255 255 128;
+            image.normal: "c_images/button_shadow.png";
+            image.border: 9 9 9 9;
+            visible: 0;
+            offscale;
+       }
+       description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+        }
       }
       part {
          name: "sld_runner";
@@ -544,6 +586,18 @@ group { name: "e/widgets/slider_horizontal";
          action: STATE_SET "default" 0.0;
          target: "clip";
          target: "catch";
+      }
+      program {
+         name: "focus_in";
+         signal: "e,state,focused"; source: "e";
+         action: STATE_SET "focused" 0.0;
+         target: "focused";
+      }
+      program {
+         name: "focus_out";
+         signal: "e,state,unfocused"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "focused";
       }
    }
 }
