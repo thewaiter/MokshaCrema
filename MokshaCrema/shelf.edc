@@ -475,7 +475,7 @@ group { name: "e/shelf/default/inset";
          description {
             state: "default" 0.0;
             rel1 {
-               offset: 2 2;
+               offset: 4 4;
             }
             rel2 {
                offset: -2 -2;
