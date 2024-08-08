@@ -214,8 +214,8 @@ group { name: "e/widgets/ilist_header";
    parts {
       part { name: "base"; type: RECT; mouse_events: 0;
          description { state: "default" 0.0;
-            color: 23 37 38 255;
-            color_class: "ilist_item_base";
+            color: 200 141 48 255;
+            hid;
          }
       }
       part { name: "pat";
@@ -224,12 +224,7 @@ group { name: "e/widgets/ilist_header";
             TILED_PATTERN(256, 256)
          }
       }
-      part { name: "shadow"; mouse_events: 0;
-         description { state: "default" 0.0;
-            image.normal: "shadow_vertical_dark.png";
-            color: 255 255 255 128;
-         }
-      }
+    
       part { name: "e.swallow.icon"; type: SWALLOW; mouse_events: 0;
          description { state: "default" 0.0;
             align: 0.0 0.5;
@@ -240,19 +235,16 @@ group { name: "e/widgets/ilist_header";
          }
       }
       part { name: "e.text.label"; type: TEXT; mouse_events: 0;
-         effect: SHADOW BOTTOM;
          scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 2 6;
             rel1.relative: 1.0 0.0;
             rel1.to_x: "e.swallow.icon";
-            rel2.offset: -3 -7;
+            rel2.offset: -3 -2;
             rel2.relative: 0.0 1.0;
             rel2.to_x: "e.swallow.end";
-            color3: 255 255 255 255;
             color: 0 0 0 128;
-            color_class: "ilist_item_header";
-            text { font: FNBD; size: 10;
+            text { font: FNBD; size: 12;
                min: 0 1;
                align: 0.0 0.5;
                text_class: "ilist_item";
@@ -266,14 +258,6 @@ group { name: "e/widgets/ilist_header";
             rel1.offset: -3 2;
             rel1.relative: 1.0 0.0;
             rel2.offset: -3 -3;
-         }
-      }
-      part { name: "shadow2"; mouse_events: 0;
-         description { state: "default" 0.0;
-            image.normal: "inset_shadow.png";
-            image.border: 5 5 7 3;
-            image.middle: 0;
-            fill.smooth: 0;
          }
       }
    }
