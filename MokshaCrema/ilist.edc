@@ -209,8 +209,8 @@ group { name: "e/widgets/ilist_header";
    alias: "e/widgets/ilist_header_odd";
    data.item: "stacking" "above";
    images.image: "dot_pattern.png" COMP;
-   images.image: "inset_shadow.png" COMP;
-   images.image: "shadow_vertical_dark.png" COMP;
+   //~ images.image: "inset_shadow.png" COMP;
+   //~ images.image: "shadow_vertical_dark.png" COMP;
    parts {
       part { name: "base"; type: RECT; mouse_events: 0;
          description { state: "default" 0.0;
