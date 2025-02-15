@@ -85,4 +85,5 @@ collections {
 #include "toolbar.edc"
 #include "sys.edc"
 #include "xkbswitch.edc"
+#include "wallpaper.edc"
 }
