@@ -3,7 +3,7 @@
 
 printf "\n\033[1;33mWARNING:\033[0m For use with Bodhi Linux 7 only.\n\n"
 cd MokshaCrema
-sed -i 's/MokshaCrema/Icons-Moksha-Crema/g' default.edc
+sed -i 's/MokshaCrema/Icons-Moksha-Crema/g' crema.edc
 ./build.sh
-sed -i 's/Icons-Moksha-Crema/MokshaCrema/g' default.edc
+sed -i 's/Icons-Moksha-Crema/MokshaCrema/g' crema.edc
 cd ..
