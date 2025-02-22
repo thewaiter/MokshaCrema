@@ -15,7 +15,7 @@ data {
   item: "theme/version"   CREMA_VERSION;
   item: "theme/license"  "Gpl 3";
   item: "theme/updated"  "Agust";
-  item: "gtk-theme"      "MokshaCrema-GTK";
+  item: "gtk-theme"      "MokshaCrema";
   item: "icon-theme"     "MokshaCrema";
 }
 
