@@ -30,7 +30,7 @@ group { name: "e/widgets/configure/main";
             color3: 0 0 0 32;
             color_class: "configure_title";
             text {
-               text: "Enlightenment Configuration";
+               text: "Moksha Configuration";
                font: "Edje-Vera-Bold";
                size: 16;
                min: 1 1;
